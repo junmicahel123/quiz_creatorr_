@@ -17,7 +17,7 @@ def questionare():
         question = input("Please emter a question::  ")
         choices = []
         for i in range(4):
-            choice = input(f"Enter the choices for {97 + i}::")
+            choice = input(f"Enter the choices for {chr(97 + i)}::")
         
             choices.append(choice)
         correct_answer = input("What is the correct answer? (A, B, C,)").strip().lower()
@@ -31,8 +31,11 @@ def questionare():
         continueum = input("Do you want to add another question?: (y/n)").strip().lower()
         if continueum != 'y':
             break
+    save_questions_(questions)
 
-
+def save_questions_(questions):
+    with open('quiz_creator_data_.txt', 'w') as file:
+        pass
 
 
 
