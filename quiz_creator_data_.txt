@@ -1,0 +1,14 @@
+Question 1: What is pi?
+   a) 69
+   b) 25
+   c) 34
+   d) 3.14
+Correct Answer: d
+
+Question 2: How are you?
+   a) what?
+   b) no
+   c) Lebron James
+   d) I am fine, Thank you
+Correct Answer: d
+
