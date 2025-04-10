@@ -49,4 +49,22 @@ def save_questions_(questions):
     print("Questions saved to quiz_creator_data_.txt")
 
 questionare()
+
+
+root = tk.Tk()
+root.title("Quiz Question Creator")
+root.geometry("450x500")
+root.configure(bg="#f0f4f7")
+
+
+header = tk.Label(root, text="QUIZ QUESTION CREATOR", font=("Arial", 16, "bold"), bg="#2c3e50", fg="white", pady=10)
+header.pack(fill="x")
+
+main_frame = tk.Frame(root, bg="#f0f4f7", padx=20, pady=20)
+main_frame.pack(fill="both", expand=True)
+
+tk.Label(main_frame, text="Enter your question:", font=("Arial", 11), bg="#f0f4f7").pack(anchor="w")
+question_entry = tk.Entry(main_frame, width=50, font=("Arial", 10))
+question_entry.pack(pady=5)
+
             
