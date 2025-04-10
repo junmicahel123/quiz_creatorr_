@@ -36,11 +36,15 @@ def questionare():
 
 
 def save_questions_(questions):
-    file = open('quiz_creator_data_.txt', 'w')
-    entry = str(questions)
-    file.write(entry)
-    file.close()
-
+    with open('quiz_creator_data_.txt', 'w') as file:
+        for i, q in enumerate(questions, 1):
+            file.write(f"Question {i}: {q['Question']}\n")
+            file.write(f"   a) {q['Choices'][0]}\n")
+            file.write(f"   b) {q['Choices'][1]}\n")
+            file.write(f"   c) {q['Choices'][2]}\n")
+            file.write(f"   d) {q['Choices'][3]}\n")
+            file.write(f"Correct Answer: {q['Correct Answer']}\n\n")
+    print("Questions saved to quiz_creator_data_.txt")
 
 questionare()
             
