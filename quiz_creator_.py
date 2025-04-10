@@ -12,32 +12,36 @@
 import tkinter as tk
 from tkinter import messagebox
 
+questions = []
+
 def add_question():
-    number_of_items = 0
-    questions = []
-    while True:
-        question = str(input("Please enter a question::  "))
-        choices = []
-        for i in range(4):
-            choice = str(input(f"Enter the choices for {chr(97 + i)}::"))
-        
-            choices.append(choice)
-        correct_answer = input("What is the correct answer? (A, B, C,)").strip().lower()
+    question = question_entry.get()
+    choices = [entry.get() for entry in choice_entries]
+    correct = correct_answer.get().strip().lower()
 
-        questions.append({
-            'Question': question,
-            'Choices': choices,
-            'Correct Answer': correct_answer 
-        })
-        number_of_items += 1
-        continueum = input("Do you want to add another question?: (y/n)").strip().lower()
-        if continueum == 'n':
-            break
-    
-   
+    if not question or any(not c for c in choices) or correct not in ['a', 'b', 'c', 'd']:
+        messagebox.showwarning("Input Error", "Please complete all fields and choose a valid correct answer (a-d).")
+        return
 
+    questions.append({
+        'Question': question,
+        'Choices': choices,
+        'Correct Answer': correct
+    })
+
+    # Clear input fields
+    question_entry.delete(0, tk.END)
+    for entry in choice_entries:
+        entry.delete(0, tk.END)
+    correct_answer.delete(0, tk.END)
+
+    messagebox.showinfo("Saved", "Question added!")
 
 def finish():
+    if not questions:
+        messagebox.showwarning("No Questions", "You haven't added any questions yet.")
+        return
+
     with open('quiz_creator_data_.txt', 'w') as file:
         for i, q in enumerate(questions, 1):
             file.write(f"Question {i}: {q['Question']}\n")
@@ -46,11 +50,11 @@ def finish():
             file.write(f"   c) {q['Choices'][2]}\n")
             file.write(f"   d) {q['Choices'][3]}\n")
             file.write(f"Correct Answer: {q['Correct Answer']}\n\n")
-    print("Questions saved to quiz_creator_data_.txt")
 
+    messagebox.showinfo("Saved", "All questions saved to quiz_creator_data_.txt")
+    root.destroy()
 
-
-
+    
 root = tk.Tk()
 root.title("Quiz Question Creator")
 root.geometry("450x500")
