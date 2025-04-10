@@ -6,9 +6,11 @@
         # ask for choices
         # ask for the correct answer
 # use def to save the data into file
-    # use file.write function to store
+    # use with openn
     #
 
+import tkinter as tk
+from tkinter import messagebox
 
 def questionare():
     number_of_items = 0
