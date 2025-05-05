@@ -23,12 +23,17 @@ import tkinter as tk
 from tkinter import messagebox
 import random
 
+def load_questions():
+def ask_question():
+
+def check_answer(choice_index):
+
 root = tk.Tk()
 root.title("Quiz Game")
 root.geometry("500x400")
 root.configure(bg="#ecf0f1")
 
-question_pool = ()
+question_pool = load_questions()
 current_question = {}
 
 question_label = tk.Label(root, text="", wraplength=450, font=("Arial", 14, "bold"), bg="#34495e", fg="white", pady=10)
@@ -42,7 +47,7 @@ for i in range(4):
 
 
 if question_pool:
-    ()
+     ask_question()
 else:
     messagebox.showwarning("Empty", "No questions available in the file.")
     root.destroy()
