@@ -39,3 +39,12 @@ for i in range(4):
     btn = tk.Button(root, text="", font=("Arial", 12), width=40, command=lambda idx=i: check_answer(idx), bg="#3498db", fg="white", cursor="hand2")
     btn.pack(pady=5)
     choice_buttons.append(btn)
+
+
+if question_pool:
+    ()
+else:
+    messagebox.showwarning("Empty", "No questions available in the file.")
+    root.destroy()
+
+root.mainloop()
