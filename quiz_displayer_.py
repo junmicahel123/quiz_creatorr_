@@ -19,13 +19,23 @@
 
 #HOW "All questions answered" when done
 
-
-
-
-
-
-
-
 import tkinter as tk
 from tkinter import messagebox
 import random
+
+root = tk.Tk()
+root.title("Quiz Game")
+root.geometry("500x400")
+root.configure(bg="#ecf0f1")
+
+question_pool = ()
+current_question = {}
+
+question_label = tk.Label(root, text="", wraplength=450, font=("Arial", 14, "bold"), bg="#34495e", fg="white", pady=10)
+question_label.pack(fill="x", padx=10, pady=20)
+
+choice_buttons = []
+for i in range(4):
+    btn = tk.Button(root, text="", font=("Arial", 12), width=40, command=lambda idx=i: check_answer(idx), bg="#3498db", fg="white", cursor="hand2")
+    btn.pack(pady=5)
+    choice_buttons.append(btn)
