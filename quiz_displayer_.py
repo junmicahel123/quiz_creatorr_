@@ -19,6 +19,9 @@
 
 #HOW "All questions answered" when done
 
+
+
+##########
 import tkinter as tk
 from tkinter import messagebox
 import random
@@ -64,7 +67,7 @@ def check_answer(choice_index):
         messagebox.showinfo("Result", "✅ Correct!")
     else:
         messagebox.showinfo("Result", f"❌ Incorrect!\nCorrect answer: {current_question['Correct Answer']}) {current_question['Choices'][ord(current_question['Correct Answer']) - 97]}")
-    ask_question(
+    ask_question()
 
 root = tk.Tk()
 root.title("Quiz Game")
