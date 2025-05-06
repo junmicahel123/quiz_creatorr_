@@ -59,6 +59,12 @@ def ask_question():
 
 
 def check_answer(choice_index):
+    answer_letter = chr(97 + choice_index)
+    if answer_letter == current_question["Correct Answer"]:
+        messagebox.showinfo("Result", "✅ Correct!")
+    else:
+        messagebox.showinfo("Result", f"❌ Incorrect!\nCorrect answer: {current_question['Correct Answer']}) {current_question['Choices'][ord(current_question['Correct Answer']) - 97]}")
+    ask_question(
 
 root = tk.Tk()
 root.title("Quiz Game")
