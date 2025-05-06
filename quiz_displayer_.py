@@ -41,6 +41,7 @@ def load_questions():
                     "Choices": choices,
                     "Correct Answer": correct
                 })
+            random.shuffle(questions)
             return questions
     except FileNotFoundError:
         messagebox.showerror("Error", "quiz_creator_data_.txt not found.")
@@ -53,8 +54,7 @@ def ask_question():
         root.destroy()
         return
 
-    current_question = random.choice(question_pool)
-    question_pool.remove(current_question)
+    current_question = question_pool.pop(0) 
 
     question_label.config(text=current_question["Question"])
     for i, btn in enumerate(choice_buttons):
