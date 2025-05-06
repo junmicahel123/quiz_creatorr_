@@ -24,7 +24,39 @@ from tkinter import messagebox
 import random
 
 def load_questions():
+    try:
+        with open("quiz_creator_data_.txt", "r") as file:
+            content = file.read().strip().split("\n\n")
+            questions = []
+            for block in content:
+                lines = block.strip().split("\n")
+                question = lines[0].split(":", 1)[1].strip()
+                choices = [line.split(")", 1)[1].strip() for line in lines[1:5]]
+                correct = lines[5].split(":")[1].strip().lower()
+                questions.append({
+                    "Question": question,
+                    "Choices": choices,
+                    "Correct Answer": correct
+                })
+            return questions
+    except FileNotFoundError:
+        messagebox.showerror("Error", "quiz_creator_data_.txt not found.")
+        return []
+
 def ask_question():
+    global current_question
+    if not question_pool:
+        messagebox.showinfo("Done", "You've answered all questions!")
+        root.destroy()
+        return
+
+    current_question = random.choice(question_pool)
+    question_pool.remove(current_question)
+
+    question_label.config(text=current_question["Question"])
+    for i, btn in enumerate(choice_buttons):
+        btn.config(text=f"{chr(97+i)}) {current_question['Choices'][i]}", state="normal")
+
 
 def check_answer(choice_index):
 
