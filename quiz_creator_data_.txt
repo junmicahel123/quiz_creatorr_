@@ -1,21 +1,35 @@
-Question 1: What is our planet called
-   a) Beerus
-   b) Jupiter
-   c) Earth
-   d) Saturn
-Correct Answer: c
+Question 1: How many Sun do we have?
+   a) a few
+   b) 10
+   c) 2
+   d) 1
+Correct Answer: d
 
 Question 2: How many colors does the PH flag have
-   a) 0
+   a) 2
    b) 4
-   c) 3
-   d) 100
+   c) 100
+   d) 0
 Correct Answer: b
 
-Question 3: What animal is Mickey Mouse
-   a) Horse
-   b) Dragon
-   c) Mule
-   d) Mouse
-Correct Answer: d
+Question 3: How many dragon balls are there
+   a) 10
+   b) 8
+   c) 7
+   d) 9
+Correct Answer: c
+
+Question 4: What is the name of our planet?
+   a) Pluto
+   b) John Micheal
+   c) Earth
+   d) Marshie
+Correct Answer: c
+
+Question 5: How many moons does Earth have?
+   a) 2
+   b) 1
+   c) 2
+   d) 3
+Correct Answer: b
 
